@@ -379,4 +379,8 @@ jobs:
         run: moodle-plugin-ci phpunit
       # Run Behat tests on all Moodle branches.
       - name: Behat features
-        run: moodle-plugin-ci behat --profile default --tags=@filter_wiris_current -vvv
+        run: |
+          docker run -d --rm --name=selenium --net=host --shm-size=2g -v /home/runner/work/moodle-filter_wiris/moodle-filter_wiris/moodle:/home/runner/work/moodle-filter_wiris/moodle-filter_wiris/moodle selenium/standalone-chrome:3
+          nohup php -S localhost:8000 -t /home/runner/work/moodle-filter_wiris/moodle-filter_wiris/moodle > phpd.log 2>&1 &
+          php moodle/admin/tool/behat/cli/run.php --tags=filter_wiris_current --profile=chrome --suite=default --auto-rerun=2 --verbose -vvv
+          docker stop selenium
