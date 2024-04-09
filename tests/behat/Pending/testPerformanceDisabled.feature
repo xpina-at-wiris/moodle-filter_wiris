@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x
+@filter @filter_wiris @wiris_mathtype @3.x @4.x 
 Feature: Check performance
 In order to check the performance setting
 As an admin
@@ -32,6 +32,7 @@ I must not see any JSON response for images services
     And I set the following fields to these values:
       | Name | Test MathType for Atto on Moodle |
     And I press "MathType" in "Page content" field in Atto editor
+    And I wait "1" seconds
     And I set MathType formula to '<math><msqrt><mi>x</mi></msqrt></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor
@@ -48,6 +49,7 @@ I must not see any JSON response for images services
     And I set the following fields to these values:
       | Name | Test MathType for Atto on Moodle |
     And I press "MathType" in "Page content" field in Atto editor
+    And I wait "1" seconds
     And I set MathType formula to '<math><msqrt><mi>x</mi></msqrt></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor
