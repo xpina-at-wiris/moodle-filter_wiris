@@ -55,6 +55,32 @@ class behat_wiris_page extends behat_wiris_base {
     }
 
     /**
+     * Check input element 'value' equals an expected result 
+     *
+     * @Then :field input value is equal to :value
+     * @param  field input element which value is wanted
+     * @param  value value expected to receive
+     * @throws ExpectationException If the element's true 'value' is not equal to the expected one, it will throw an exception.
+     */
+    public function input_value_is_equal_to($field, $value) {
+        $fieldarray = array(
+            "Service host" => "id_s_filter_wiris_imageservicehost"
+        );
+        $valuearray = array(
+            "wiris.net" => "www.wiris.net",
+            "wipis.net" => "www.wipis.net"
+        );
+        if (empty($fieldarray[$field])) {
+            throw new ExpectationException($field." field not registered.", $this->getSession());
+        }
+        $session = $this->getSession();
+        $component = $session->getPage()->find('xpath', '//input[@id="'.$fieldarray[$field].'" and @value="'.$valuearray[$value].'"]');
+        if (empty($component)) {
+            throw new ExpectationException ('"'.$field.'" input value attribute is not equal to "'.$valuearray[$value].'"', $this->getSession());
+        }
+    }
+
+    /**
      * Click on a certain field
      *
      * @Given I click on :field field
@@ -159,7 +185,9 @@ class behat_wiris_page extends behat_wiris_base {
             "Page content" => "fitem_id_page",
             "Question text" => "fitem_id_questiontext",
             "General feedback" => "fitem_id_generalfeedback",
-            "Feedback" => "fitem_id_feedback_0"
+            "Feedback" => "fitem_id_feedback_0",
+            "Description" => "fitem_id_introeditor",
+            "Message" => "fitem_id_message"
         );
         if (empty($sectionarray[$field])) {
             throw new ExpectationException($field." field not registered.", $this->getSession());
