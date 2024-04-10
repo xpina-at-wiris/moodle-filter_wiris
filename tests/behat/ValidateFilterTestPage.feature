@@ -16,7 +16,7 @@ I must see not error messages on test page
       | admin  | C1     | editingteacher |
     And the "wiris" filter is "on"
 
-  Scenario: Visit and MathType test page
+  Scenario: MTMOODLE-11 - Visit and MathType test page
     And I go to link "/filter/wiris/info.php"
     Then "Error" "text" should not exist
     And "ERROR" "text" should not exist

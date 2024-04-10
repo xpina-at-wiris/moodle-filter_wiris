@@ -18,7 +18,7 @@ I need to open an editor
     And I log in as "admin"
 
   @javascript
-  Scenario: Click on editor's full-screen button
+  Scenario: MTMOODLE-24 - Click on editor's full-screen button
     # set render type to "client"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "client"

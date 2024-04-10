@@ -9,7 +9,7 @@ I need to access the filters page in site administration
     And I log in as "admin"
 
   @javascript
-  Scenario: Check the Wiris Quizzes settings link redirects correctly
+  Scenario: MTMOODLE-26 - Check the Wiris Quizzes settings link redirects correctly
     And I navigate to "Plugins > Filters" in site administration
     And I press "Wiris Quizzes settings" link
     Then "Connection settings" "text" should exist

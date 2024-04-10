@@ -18,7 +18,7 @@ I need to change the configuration
     And I log in as "admin"
 
   @javascript
-  Scenario: Check if a Wiris formula renders with protocol 'http'
+  Scenario: MTMOODLE-23 - Check if a Wiris formula renders with protocol 'http'
     # set text editor to "atto HTML"
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"
@@ -47,7 +47,7 @@ I need to change the configuration
     Then Wirisformula should exist
 
   @javascript
-  Scenario: Check if a Wiris formula renders with protocol 'https'
+  Scenario: MTMOODLE-23 - Check if a Wiris formula renders with protocol 'https'
     # set text editor to "atto HTML"
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"

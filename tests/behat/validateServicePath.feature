@@ -5,7 +5,7 @@ As an admin
 I should be able to access the test service depending if the service path exists
 
   @javascript
-  Scenario: Set a correct service path
+  Scenario: MTMOODLE-28 - Set a correct service path
     Given the "wiris" filter is "on"
     And I log in as "admin"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
@@ -16,7 +16,7 @@ I should be able to access the test service depending if the service path exists
     Then "exception" "text" should not exist
 
   @javascript
-  Scenario: Set a correct service path
+  Scenario: MTMOODLE-28 - Set a correct service path
     Given the "wiris" filter is "on"
     And I log in as "admin"
     And I navigate to "Plugins > MathType by WIRIS" in site administration

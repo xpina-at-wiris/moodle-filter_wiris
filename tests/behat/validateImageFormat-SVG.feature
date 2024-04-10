@@ -20,7 +20,7 @@ I need to change the configuration
     And I log in as "admin"
 
   @javascript
-  Scenario: Add a MathML formula and check MathType renders an SVG image correctly with server side rendering
+  Scenario: MTMOODLE-13 - Add a MathML formula and check MathType renders an SVG image correctly with server side rendering
     # set text editor to "atto HTML"
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"
@@ -46,7 +46,7 @@ I need to change the configuration
     And MathType formula in svg format is correctly displayed
 
   @javascript
-  Scenario: Add a MathML formula and check MathType renders an SVG image correctly with client side rendering
+  Scenario: MTMOODLE-13 - Add a MathML formula and check MathType renders an SVG image correctly with client side rendering
     # set render type to "client"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "client"

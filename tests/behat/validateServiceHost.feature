@@ -5,7 +5,7 @@ As an admin
 I should be able to access the test service depending if the service host exists
 
   @javascript
-  Scenario: Set an incorrect service host
+  Scenario: MTMOODLE-27 - Set an incorrect service host
     Given the "wiris" filter is "on"
     And I log in as "admin"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
@@ -16,7 +16,7 @@ I should be able to access the test service depending if the service host exists
     Then "exception" "text" should exist
 
   @javascript
-  Scenario: Set a correct service host
+  Scenario: MTMOODLE-27 - Set a correct service host
     Given the "wiris" filter is "on"
     And I log in as "admin"
     And I navigate to "Plugins > MathType by WIRIS" in site administration

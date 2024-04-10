@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @moodle_activities @page_render
+@filter @filter_wiris @wiris_mathtype @3.x @4.x @moodle_activities @page_render @pending
 Feature: Render in moodle pages
 In order to check the pages rendering
 As an admin

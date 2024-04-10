@@ -9,7 +9,7 @@ I need to access the filters page in site administration
     And I log in as "admin"
 
   @javascript
-  Scenario: Check that different categories of settings exist
+  Scenario: MTMOODLE-10 - Check that different categories of settings exist
     And I navigate to "Plugins > Filters" in site administration
     Then "Common filter settings" "text" should exist
     Then "Convert URLs into links and images" "text" should exist

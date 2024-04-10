@@ -8,7 +8,6 @@ I need to change the render type
     Given the following config values are set as admin:
       | config | value | plugin |
       | toolbar | math = wiris | editor_atto |
-      | imageformat | svg | filter_wiris |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
@@ -20,7 +19,7 @@ I need to change the render type
     And I log in as "admin"
 
   @javascript
-  Scenario: Add a MathML formula and check client side rendering works with Javascript library
+  Scenario: MTMOODLE-12 - Add a MathML formula and check client side rendering works with Javascript library
     # set render type to "client"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "client"
@@ -49,7 +48,7 @@ I need to change the render type
     And MathType formula in svg format is correctly displayed
 
   @javascript
-  Scenario: Add a MathML formula and check server side rendering works with PHP library
+  Scenario: MTMOODLE-12 - Add a MathML formula and check server side rendering works with PHP library
     # set render type to "PHP"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "php"

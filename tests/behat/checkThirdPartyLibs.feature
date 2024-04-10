@@ -8,7 +8,7 @@ I need to Check if MathType integration appears on third party libraries page
     Given I log in as "admin"
 
   @javascript
-  Scenario: Check third party libraries
+  Scenario: MTMOODLE-87 - Check third party libraries
     And I navigate to "Development > Third party libraries" in site administration
     Then "MathType Web Integration PHP library" "text" should exist
     Then "MathType Web Integration JavaScript SDK" "text" should exist

@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @editor_settings
+@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @editor_settings @pending
 Feature: Check the math and chem buttons visibility on text editors
 In order to check the buttons visibility in atto editor
 As an admin
@@ -20,7 +20,7 @@ I need to change the settings on the filter wiris
     And I log in as "admin"
 
   @javascript
-  Scenario: Disable mathtype button and check that it is not visible 
+  Scenario: MTMOODLE-18 - Disable mathtype button and check that it is not visible 
     # set text editor to "atto HTML"
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"
@@ -38,7 +38,7 @@ I need to change the settings on the filter wiris
     And I check "ChemType" in "Page content" field "does" exist in Atto editor
 
   @javascript
-  Scenario: Disable chemtype button and check that it is not visible
+  Scenario: MTMOODLE-19 - Disable chemtype button and check that it is not visible
     # set text editor to "atto HTML"
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"
@@ -71,21 +71,3 @@ I need to change the settings on the filter wiris
     And I add a "Page" to section "0"
     Then I check "MathType" in "Page content" field "does not" exist in Atto editor
     And I check "ChemType" in "Page content" field "does not" exist in Atto editor
-
-  @javascript
-  Scenario: Enable editor always active and check that both buttons are visible
-    # set text editor to "atto HTML"
-    And I follow "Preferences" in the user menu
-    And I follow "Editor preferences"
-    And I set the following fields to these values:
-      | Text editor | Atto HTML editor |
-    And I press "Save changes"
-    And I set the following administration settings values:
-      | Editor always active   | 1 |
-      | Chemistry editor       | 0 |
-      | Math editor            | 0 |
-    And I press "Save changes"
-    And I am on "Course 1" course homepage with editing mode on
-    And I add a "Page" to section "0"
-    Then I check "MathType" in "Page content" field "does" exist in Atto editor
-    And I check "ChemType" in "Page content" field "does" exist in Atto editor

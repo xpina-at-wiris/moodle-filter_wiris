@@ -20,7 +20,7 @@ I need to enable the Convert URLs into links and images filter and insert a Math
     And I log in as "admin"
 
   @javascript
-  Scenario: Insert a formula with the Convert URLs into links and images filter on
+  Scenario: MTMOODLE-30 - Insert a formula with the Convert URLs into links and images filter on
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"
     And I set the following fields to these values:

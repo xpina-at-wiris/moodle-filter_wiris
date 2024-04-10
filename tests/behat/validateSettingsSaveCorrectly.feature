@@ -5,7 +5,7 @@ As an admin
 I need to access the filters page in site administration
 
   @javascript
-  Scenario: Check settings do not change before saving
+  Scenario: MTMOODLE-29 - Check settings do not change before saving
     Given the "wiris" filter is "on"
     And I log in as "admin"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
