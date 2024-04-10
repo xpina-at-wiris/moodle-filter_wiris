@@ -20,7 +20,7 @@ I need to change the configuration
     And I log in as "admin"
 
   @javascript
-  Scenario: Check MathType renders a wiris formula in moodle pages
+  Scenario: MTMOODLE-8 - Check MathType renders a wiris formula in moodle pages
     # set text editor to "atto HTML"
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"
