@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @connection_settings
+@mtmoodle-28 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @connection_settings
 Feature: Validate service path - Invalid value
 In order to check the service path setting
 As an admin

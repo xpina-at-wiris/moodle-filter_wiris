@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @image_settings
+@mtmoodle-12 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @image_settings
 Feature: Render type
 In order to enable client-side and server side types
 As an admin

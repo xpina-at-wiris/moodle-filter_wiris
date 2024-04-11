@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @window_settings
+@mtmoodle-24 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @window_settings
 Feature: Check full-screen modal
 In order to check if the editor's full-screen modal is displayed
 As an admin

@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings
+@mtmoodle-26 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings
 Feature: Check Wiris Quizzes settings link
 In order to check the Wiris Quizzes settings link redirects correctly
 As an admin

@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @manage_filters @compatibility_with_other_filters
+@mtmoodle-30 @filter @filter_wiris @wiris_mathtype @3.x @4.x @manage_filters @compatibility_with_other_filters 
 Feature: Compatibility with the Convert URLs into links and images filter by Moodle
 In order to check that the Convert URLs into links and images filter is compatible with the Wiris filter
 As an admin

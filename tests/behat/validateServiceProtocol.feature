@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @connection_settings
+@mtmoodle-23 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @connection_settings
 Feature: Render in SVG format
 In order to check the service protocol
 As an admin

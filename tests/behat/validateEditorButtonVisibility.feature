@@ -1,4 +1,4 @@
-@filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @editor_settings @pending
+@mtmoodle-18 @mtmoodle-19 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @editor_settings @pending
 Feature: Check the math and chem buttons visibility on text editors
 In order to check the buttons visibility in atto editor
 As an admin
@@ -63,7 +63,8 @@ I need to change the settings on the filter wiris
     And I set the following fields to these values:
       | Text editor | Atto HTML editor |
     And I press "Save changes"
-    And I set the following administration settings values:
+    And I navigate to "Plugins > MathType by WIRIS" in site administration
+    And I set the following fields to these values:
       | Chemistry editor   | 0 |
       | Math editor    | 0 |
     And I press "Save changes"
