@@ -1,4 +1,4 @@
-@mtmoodle-18 @mtmoodle-19 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @editor_settings @pending
+@mtmoodle-18 @mtmoodle-19 @mtmoodle-20 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings @editor_settings
 Feature: Check the math and chem buttons visibility on text editors
 In order to check the buttons visibility in atto editor
 As an admin
@@ -56,7 +56,7 @@ I need to change the settings on the filter wiris
     And I check "ChemType" in "Page content" field "does not" exist in Atto editor
 
   @javascript
-  Scenario: Disable mathtype & chemtype buttons and check that they are not visible
+  Scenario: MTMOODLE-20 - Set mathtype & chemtype buttons always active and disable MathType filter
     # set text editor to "atto HTML"
     And I follow "Preferences" in the user menu
     And I follow "Editor preferences"
@@ -65,10 +65,12 @@ I need to change the settings on the filter wiris
     And I press "Save changes"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And I set the following fields to these values:
-      | Chemistry editor   | 0 |
-      | Math editor    | 0 |
+      | Chemistry editor   | 1 |
+      | Math editor    | 1 |
+      | Editor always active   | 1 |
     And I press "Save changes"
+    And the "wiris" filter is "off"
     And I am on "Course 1" course homepage with editing mode on
     And I add a "Page" to section "0"
-    Then I check "MathType" in "Page content" field "does not" exist in Atto editor
-    And I check "ChemType" in "Page content" field "does not" exist in Atto editor
+    Then I check "MathType" in "Page content" field "does" exist in Atto editor
+    Then I check "ChemType" in "Page content" field "does" exist in Atto editor
