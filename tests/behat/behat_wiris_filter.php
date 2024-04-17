@@ -113,20 +113,4 @@ class behat_wiris_filter extends behat_wiris_base {
         reset_text_filters_cache();
         core_plugin_manager::reset_caches();
     }
-
-    /**
-     * Click on link with no id 
-     *
-     * @Given I press :value link
-     * @param  string link's text value
-     * @throws ExpectationException If the link is not found, it will throw an exception.
-     */
-    public function i_press_link($value) {
-        $session = $this->getSession();
-        $component = $session->getPage()->find('xpath', '//*[text()="'.$value.'"]');
-        if (empty($component)) {
-            throw new ExpectationException ('"'.$value.'" link not found in page', $this->getSession());
-        }
-        $component->click();
-    }
 }

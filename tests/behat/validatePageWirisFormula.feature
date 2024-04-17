@@ -8,7 +8,6 @@ I need to change the configuration
     Given the following config values are set as admin:
       | config | value | plugin |
       | toolbar | math = wiris | editor_atto |
-
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
@@ -34,7 +33,7 @@ I need to change the configuration
       | Name | Test MathType for wiris formula render in pages |
     # insert Wirisformula 
     And I press "MathType" in "Page content" field in Atto editor
-    And I wait "5" seconds
+    And I wait until MathType editor is displayed
     And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>+</mo><mn>1</mn></math>'
     And I wait "1" seconds
     And I press accept button in MathType Editor

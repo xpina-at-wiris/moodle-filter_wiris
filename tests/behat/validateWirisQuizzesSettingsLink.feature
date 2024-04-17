@@ -11,7 +11,7 @@ I need to access the filters page in site administration
   @javascript
   Scenario: MTMOODLE-26 - Check the Wiris Quizzes settings link redirects correctly
     And I navigate to "Plugins > Filters" in site administration
-    And I press "Wiris Quizzes settings" link
+    And I follow "Wiris Quizzes settings"
     Then "Connection settings" "text" should exist
     And "Compatibility settings" "text" should exist
     And "Troubleshooting" "text" should exist
