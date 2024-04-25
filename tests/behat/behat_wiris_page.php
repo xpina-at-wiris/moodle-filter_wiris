@@ -123,23 +123,6 @@ class behat_wiris_page extends behat_wiris_base {
     }
 
     /**
-     * DbClick on a certain WirisFormula with specific alternative text.
-     *
-     * @Given I dbClick on WirisFormula with alt equals to :alt
-     * @param  string $alt formula alternative text
-     * @throws ExpectationException If the formula is not found, it will throw an exception.
-     */
-    public function i_dbclick_on_wirisformula_with_alt_text($alt) {
-        $session = $this->getSession();
-        $component = $session->getPage()->find('xpath', '//img[contains(@alt, "' . $alt . '")]');
-        if (empty($component)) {
-            throw new ExpectationException("Formula with alternative text" .
-                    $alt . " is not correctly recognized.", $this->getSession());
-        }
-        $component->doubleClick();
-    }
-
-    /**
      * Follows the page redirection. Use this step after any action that shows a message and waits for a redirection
      *
      * @Then modal window is opened

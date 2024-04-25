@@ -156,6 +156,21 @@ class behat_wiris_editor extends behat_wiris_base {
     }
 
     /**
+     * Click on MathType right to left screen button
+     *
+     * @Given I click on MathType right to left button
+     * @throws ExpectationException If the full screen button is not found, it will throw an exception.
+     */
+    public function i_click_on_mathtype_right_to_left_button() {
+        $session = $this->getSession();
+        $component = $session->getPage()->find('xpath', '//button[@title=\'Right to left editing\']');
+        if (empty($component)) {
+            throw new ExpectationException('Right to Left button not found.', $this->getSession());
+        }
+        $component->click();
+    }
+
+    /**
      * Follows the page redirection. Use this step after clicking the editor's maximize button
      *
      * @Then full screen modal window is opened
@@ -195,5 +210,27 @@ class behat_wiris_editor extends behat_wiris_base {
         // Then re-validate to throw error otherwise (?).
         $this->mathtype_editor_should_exist();
     }
+
+    /**
+     * Follows the page redirection. Use this step after clicking the editor's maximize button
+     *
+     * @Then i press :key key :number times
+     */
+    public function i_press_key_times($key, $loops) {
+        $keycodes = array(
+            "Enter" => "13",
+            "Tabulation" => "9",
+            "Backspace" => "8"
+        );
+        if (empty($keycodes[$key])) {
+            throw new ExpectationException($key." key not registered.", $this->getSession());
+        }
+        $session = $this->getSession();
+        for($i=0; $i < $loops; $i++) {
+			$this->getSession()->getPage()->pressButton($keycodes[$key]);
+		}
+    }
+
+
 
 }
