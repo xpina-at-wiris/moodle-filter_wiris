@@ -1,4 +1,4 @@
-@mtmoodle-11 @filter @filter_wiris @wiris_mathtype @3.x @4.x @test_page
+@3.x @4.x @wiris_mathtype @filter @filter_wiris @test_page @mtmoodle-11
 Feature: Check test page
 In order to check the test page
 As a user

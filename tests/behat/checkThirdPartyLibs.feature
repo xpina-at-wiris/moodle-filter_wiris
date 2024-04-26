@@ -1,4 +1,4 @@
-@mtmoodle-87 @filter @filter_wiris @wiris_mathtype @3.x @4.x @third_party_libraries 
+@3.x @4.x @wiris_mathtype @filter @filter_wiris @third_party_libraries @mtmoodle-87
 Feature: Check MathType integration as a third party lib
 In order to check if MathType integration is a third party library
 As an admin

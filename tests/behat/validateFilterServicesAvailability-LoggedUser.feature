@@ -1,4 +1,4 @@
-@mtmoodle-15 @filter @filter_wiris @wiris_mathtype @3.x @4.x @services
+@3.x @4.x @wiris_mathtype @filter @filter_wiris @services @mtmoodle-15 
 Feature: Check access provider for logged users
 In order to check access provider
 As an admin

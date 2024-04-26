@@ -1,4 +1,4 @@
-@mtmoodle-8 @filter @filter_wiris @wiris_mathtype @3.x @4.x @moodle_activities @page_render 
+@3.x @4.x @wiris_mathtype @filter @filter_wiris @moodle_activities @page_render @mtmoodle-8
 Feature: Render in moodle pages
 In order to check the pages rendering
 As an admin

@@ -1,4 +1,4 @@
-@mtmoodle-10 @filter @filter_wiris @wiris_mathtype @3.x @4.x @filter_settings
+@3.x @4.x @wiris_mathtype @filter @filter_wiris @filter_settings @mtmoodle-10
 Feature: Check MathType filters page
 In order to check if MathType filters can be configurated
 As an admin
