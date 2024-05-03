@@ -1,4 +1,4 @@
-@3.x @4.x @wiris_mathtype @filter @filter_wiris @filter_settings @connection_settings @mtmoodle-27 
+@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @filter_settings @connection_settings @mtmoodle-27 
 Feature: Validate service host - Valid value
 In order to check the service host setting
 As an admin

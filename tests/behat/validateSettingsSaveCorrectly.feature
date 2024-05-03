@@ -1,4 +1,4 @@
-@3.x @4.x @wiris_mathtype @filter @filter_wiris @filter_settings @mtmoodle-29
+@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @filter_settings @mtmoodle-29
 Feature: Check filters settings save correctly
 In order to check if MathType settings are being saved correctly
 As an admin
