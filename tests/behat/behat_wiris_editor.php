@@ -199,7 +199,7 @@ class behat_wiris_editor extends behat_wiris_base {
     }
 
     /**
-     * Follows the page redirection. Use this step after clicking the editor's maximize button
+     * Waits the excution until the MathType editor displays
      *
      * @Then i wait until MathType editor is displayed
      */
@@ -212,25 +212,16 @@ class behat_wiris_editor extends behat_wiris_base {
     }
 
     /**
-     * Follows the page redirection. Use this step after clicking the editor's maximize button
+     * Waits the excution until the MathType editor displays
      *
-     * @Then i press :key key :number times
+     * @Then text should exist
      */
-    public function i_press_key_times($key, $loops) {
-        $keycodes = array(
-            "Enter" => "13",
-            "Tabulation" => "9",
-            "Backspace" => "8"
-        );
-        if (empty($keycodes[$key])) {
-            throw new ExpectationException($key." key not registered.", $this->getSession());
-        }
+    public function text_should_exist() {
         $session = $this->getSession();
-        for($i=0; $i < $loops; $i++) {
-			$this->getSession()->getPage()->pressButton($keycodes[$key]);
-		}
+        $text = $session->getPage()->find('xpath', '//div[@id="id_introeditoreditable"]/text()');
+        if (empty($text)) {
+            throw new ExpectationException('MathType editor not found.', $this->getSession());
+        }
     }
-
-
 
 }
