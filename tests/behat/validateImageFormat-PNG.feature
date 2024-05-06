@@ -1,4 +1,4 @@
-s@wiris_mathtype @filter @filter_wiris @filter_settings @image_settings @mtmoodle-13
+@wiris_mathtype @filter @filter_wiris @filter_settings @image_settings @mtmoodle-13
 Feature: Render in PNG format
 In order to check the PNG rendering
 As an admin
