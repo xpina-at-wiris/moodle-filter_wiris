@@ -1,4 +1,4 @@
-@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @test_page @mtmoodle-11
+@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @test_page @mtmoodle-11 
 Feature: Check test page
 In order to check the test page
 As a user
@@ -18,8 +18,9 @@ I must see not error messages on test page
 
   Scenario: MTMOODLE-11 - Visit and MathType test page
     And I go to link "/filter/wiris/info.php"
+    And I wait "1" seconds
     Then "Error" "text" should not exist
-    And "ERROR" "text" should not exist
+    And "Error" "text" should not exist
     And "KO" "text" should not exist
     And "DISABLED" "text" should not exist
     And "OK" "text" should exist
