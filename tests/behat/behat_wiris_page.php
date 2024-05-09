@@ -106,6 +106,28 @@ class behat_wiris_page extends behat_wiris_base {
     }
 
     /**
+     * Click on a certain field in TinyMCE 6
+     *
+     * @Given I click on :field field in TinyMCE 6
+     * @param  string $field field to click on
+     * @throws ExpectationException If the field is not found, it will throw an exception.
+     */
+    public function i_click_on_field_in_TinyMCE_6($field) {
+        $fieldarray = array(
+            "Page content" => "id_page",
+        );
+        if (empty($fieldarray[$field])) {
+            throw new ExpectationException($field." field not registered.");
+        }
+        $session = $this->getSession();
+        $component = $session->getPage()->find('xpath', '//body[@data-id="'.$fieldarray[$field].'"]');
+        if (empty($component)) {
+            throw new ExpectationException($field." field not correctly recognized.", $this->getSession());
+        }
+        $component->click();
+    }
+
+    /**
      * DbClick on a certain image with specific alternative text.
      *
      * @Given I dbClick on image with alt equals to :alt
@@ -156,6 +178,34 @@ class behat_wiris_page extends behat_wiris_base {
         }
         $session = $this->getSession();
         $component = $session->getPage()->find('xpath', '//div[@id="'.$fieldarray[$field].'"]');
+        if (empty($component)) {
+            throw new ExpectationException($field." field not correctly recognized.", $this->getSession());
+        }
+        $session = $this->getSession();
+        $script = 'range = window.parent.document.getSelection().getRangeAt(0);'
+            .'node = document.getElementById(\''.$fieldarray[$field].'\').firstChild;'
+            .'window.parent.document.getSelection().removeAllRanges();'
+            .'range.setStart(node,'.$position.');'
+            .'range.setEnd(node,'.$position.');'
+            .'window.parent.document.getSelection().addRange(range);'
+            .'window.parent.document.body.focus();';
+        $session->executeScript($script);
+    }
+
+    /**
+     * Place caret in a certain position in a certain field
+     *
+     * @Given I place caret at position :position in :field field in TinyMCE 6
+     * @param  integer $position position to which the caret is placed
+     * @param  string $field field to check
+     * @throws ExpectationException If the field is not found, it will throw an exception.
+     */
+    public function i_place_caret_at_position_in_field_in_TinyMCE_6($position, $field) {
+        $fieldarray = array(
+            "Page Content" => "tinymce"
+        );
+        $session = $this->getSession();
+        $component = $session->getPage()->find('xpath', '//body[@id="tinymce"]');
         if (empty($component)) {
             throw new ExpectationException($field." field not correctly recognized.", $this->getSession());
         }
@@ -235,8 +285,8 @@ class behat_wiris_page extends behat_wiris_base {
             throw new ExpectationException($field." field not registered.", $this->getSession());
         }
         $buttonarray = array(
-            "MathType" => "tiny_mce_wiris_formulaEditor",
-            "ChemType" => "tiny_mce_wiris_formulaEditorChemistry",
+            "MathType" => "Insert a math equation - MathType",
+            "ChemType" => "Insert a chemistry formula - ChemType",
             "Toggle" => "pdw_toggle",
             "Full screen" => "fullscreen"
         );
@@ -245,7 +295,7 @@ class behat_wiris_page extends behat_wiris_base {
         }
         $session = $this->getSession();
         $component = $session->getPage()->find('xpath', '//div[@id="'.$sectionarray[$field].'"]
-        //*[contains(@id,\''.$buttonarray[$button].'\')]');
+        //*[contains(@title,\''.$buttonarray[$button].'\')]');
         if (empty($component)) {
             throw new ExpectationException ('"'.$button.'" button not found in "'.$field.'" field', $this->getSession());
         }
@@ -522,20 +572,20 @@ class behat_wiris_page extends behat_wiris_base {
      */
     public function i_check_in_field_in_tinymce_editor($button, $field, $exist) {
         $sectionarray = array(
-            "Page content" => "fitem_id_introeditor"
+            "Page content" => "content"
         );
         if (empty($sectionarray[$field])) {
             throw new ExpectationException($field." field not registered.", $this->getSession());
         }
         $buttonarray = array(
-            "MathType" => "id_introeditor_tiny_mce_wiris_formulaEditor_voice",
-            "ChemType" => "id_introeditor_tiny_mce_wiris_formulaEditorChemistry_voice",
+            "MathType" => "Insert a math equation - MathType",
+            "ChemType" => "Insert a chemistry formula - ChemType",
         );
         if (empty($buttonarray[$button])) {
             throw new ExpectationException($button." button not registered.", $this->getSession());
         }
         $session = $this->getSession();
-        $component = $session->getPage()->find('xpath', '//span[@id="'.$buttonarray[$button].'"]');
+        $component = $session->getPage()->find( 'xpath', '//button[@title="'.$buttonarray[$button].'"]');
         if ($exist === "does" && empty($component)) {
             throw new ExpectationException ('"'.$button.'" button not found in "'.$field.'" field', $this->getSession());
         } else if ($exist === "does not" && $component === '') {
@@ -545,37 +595,24 @@ class behat_wiris_page extends behat_wiris_base {
     }
 
     /**
-     * Checks the existance or non existance
-     * of a certain button in certain field in Atto editor
+     * Click on a certain field in TinyMCE 6
      *
-     * @Given I check :button in :field field :exist exist in TinyMCE 6 editor
-     * @param  string $button button to press
-     * @param  string $field field to check
-     * @param  string $exist existance or not existance. Values: does|does not
-     * @throws ExpectationException If the field is not found, it will throw an exception.
+     * @Given I click on :button in TinyMCE 6 editor
+     * @param  string $button button to click on
+     * @throws ExpectationException If the button is not found, it will throw an exception.
      */
-    public function i_check_in_field_in_tiny_editor($button, $field, $exist) {
-        $sectionarray = array(
-            "Page content" => "fitem_id_introeditor"
-        );
-        if (empty($sectionarray[$field])) {
-            throw new ExpectationException($field." field not registered.", $this->getSession());
-        }
+    public function i_click_on_in_TinyMCE_6_editor_toolbar($button) {
         $buttonarray = array(
-            "MathType" => "MathType",
-            "ChemType" => "ChemType",
+            "More options" => "More...",
         );
         if (empty($buttonarray[$button])) {
-            throw new ExpectationException($button." button not registered.", $this->getSession());
+            throw new ExpectationException($button." button not registered.");
         }
         $session = $this->getSession();
-        $component = $session->getPage()->find('xpath', '//div[@id="'.$sectionarray[$field].'"]
-        //*[contains(@title,\''.$buttonarray[$button].'\')]');
-        if ($exist === "does" && empty($component)) {
-            throw new ExpectationException ('"'.$button.'" button not found in "'.$field.'" field', $this->getSession());
-        } else if ($exist === "does not" && $component === '') {
-            echo "a is " . $component . "<br>";
-            throw new ExpectationException ('"'.$button.'" button found in "'.$field.'" field', $this->getSession());
+        $component = $session->getPage()->find('xpath', '//button[@title="'.$buttonarray[$button].'"]');
+        if (empty($component)) {
+            throw new ExpectationException($button." button not correctly recognized.", $this->getSession());
         }
+        $component->click();
     }
 }
