@@ -597,7 +597,7 @@ class behat_wiris_page extends behat_wiris_base {
     /**
      * Click on a certain field in TinyMCE 6
      *
-     * @Given I click on :button in TinyMCE 6 editor
+     * @Given I click on :button in TinyMCE 6 editor toolbar
      * @param  string $button button to click on
      * @throws ExpectationException If the button is not found, it will throw an exception.
      */
