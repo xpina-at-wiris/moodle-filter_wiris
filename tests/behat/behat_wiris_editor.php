@@ -224,4 +224,37 @@ class behat_wiris_editor extends behat_wiris_base {
         }
     }
 
+    /**
+     * Enters the inframe inside the specified tinymce editor
+     * @Given I switch to iframe with locator :locator
+     * @param String $locator
+    */
+    public function iSwitchToIFrameWithLocator($locator)
+    {
+
+        $javascript = "(function(){
+        var iframes = document.getElementsByTagName('iframe');
+        for (var i = 0; i < iframes.length; i++) {
+            iframes[i].name = 'iframe_number_' + (i + 1) ;
+        }
+        })()";
+
+        $this->getSession()->executeScript($javascript);
+        $iframe = $this->getSession()->getPage()->find('xpath', '//iframe[@id="'.$locator.'"]');
+        if (empty($iframe)) {
+            throw new ExpectationException('Iframe with locator \''.$locator.'\' not found', $this->getSession());
+        }
+        $iframeName = $iframe->getAttribute("name");
+        $this->getSession()->getDriver()->switchToIFrame($iframeName);
+    }
+
+    /**
+     * Exits the current iframe and return to the default frame
+     * @Given I return to default frame
+     * @param String $locator
+    */
+    public function i_return_to_default_frame()
+    {
+        $this->getSession()->getDriver()->switchToIFrame(NULL);
+    }
 }
