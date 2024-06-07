@@ -22,6 +22,7 @@ Feature: Filter Settings - Window Settings - Full Screen mode
     # set render type to "client"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "client"
+    And I check full-screen mode on
     And I press "Save changes"
     # set text editor to "HTML"
     And I follow "Preferences" in the user menu
@@ -37,15 +38,14 @@ Feature: Filter Settings - Window Settings - Full Screen mode
     # Maximize editor
     And I press "MathType" in "Page content" field in Atto editor
     And I wait "1" seconds
-    And I click on mathType editor full screen button
-    And I wait "1" seconds
-    Then full screen modal window is opened
+    Then I check editor is in full-screen mode
 
   @javascript @3.x @3.x_filter @4.0 @4.0_filter
   Scenario: MTMOODLE-24 - Validate modal window is maximized when full screen mode is selected
     # set render type to "client"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "client"
+    And I check full-screen mode on
     And I press "Save changes"
     # set text editor to "HTML"
     And I follow "Preferences" in the user menu
@@ -61,6 +61,4 @@ Feature: Filter Settings - Window Settings - Full Screen mode
     # Maximize editor
     And I press "MathType" in "Page content" field in Atto editor
     And I wait "1" seconds
-    And I click on mathType editor full screen button
-    And I wait "1" seconds
-    Then full screen modal window is opened
+    Then I check editor is in full-screen mode
