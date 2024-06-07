@@ -141,16 +141,16 @@ class behat_wiris_editor extends behat_wiris_base {
     }
 
     /**
-     * Click on MathType editor full screen button
+     * Check if Mathtype button is in full-screen mode
      *
-     * @Given I click on MathType editor full screen button
+     * @Then I check editor is in full-screen mode
      * @throws ExpectationException If the full screen button is not found, it will throw an exception.
      */
-    public function i_click_on_mathtype_full_screen_button() {
+    public function i_check_editor_is_in_full_screen_mode() {
         $session = $this->getSession();
-        $component = $session->getPage()->find('xpath', '//a[@class=\'wrs_modal_maximize_button wrs_modal_desktop wrs_stack\']');
+        $component = $session->getPage()->find('xpath', '//a[@title=\'Exit full-screen\']');
         if (empty($component)) {
-            throw new ExpectationException('Full-screen button not found.', $this->getSession());
+            throw new ExpectationException('Exit full-screen button not found.', $this->getSession());
         }
         $component->click();
     }
