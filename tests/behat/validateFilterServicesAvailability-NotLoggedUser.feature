@@ -1,13 +1,13 @@
-@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @services @mtmoodle-16 
-Feature: Check access provider for non logged users
-In order to check access provider
-As an logged user
-I can't access the services if service provider is enablabed
+@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @services @mtmoodle-16
+Feature: Integration Services availability - Not logged users
+  In order to check access provider
+  As an logged user
+  I can't access the services if service provider is enablabed
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
-      | access_provider_enabled | 1 | filter_wiris |
+      | config                  | value | plugin       |
+      | access_provider_enabled | 1     | filter_wiris |
 
   @javascript
   Scenario: MTMOODLE-16 - configurationjs.php

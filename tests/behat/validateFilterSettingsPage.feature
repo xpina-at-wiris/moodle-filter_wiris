@@ -1,8 +1,8 @@
 @3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @filter_settings @mtmoodle-10
-Feature: Check MathType filters page
-In order to check if MathType filters can be configurated
-As an admin
-I need to access the filters page in site administration
+Feature: Filter settings page
+  In order to check if MathType filters can be configurated
+  As an admin
+  I need to access the filters page in site administration
 
   Background:
     Given the "wiris" filter is "on"

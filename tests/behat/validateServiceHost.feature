@@ -1,8 +1,8 @@
-@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @filter_settings @connection_settings @mtmoodle-27 
-Feature: Validate service host - Valid value
-In order to check the service host setting
-As an admin
-I should be able to access the test service depending if the service host exists
+@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @filter_settings @connection_settings @mtmoodle-27
+Feature: Filter Settings - Connection Settings - Service host
+  In order to check the service host setting
+  As an admin
+  I should be able to access the test service depending if the service host exists
 
   @javascript
   Scenario: MTMOODLE-27 - Set an incorrect service host

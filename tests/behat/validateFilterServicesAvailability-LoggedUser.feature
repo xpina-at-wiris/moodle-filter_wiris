@@ -1,13 +1,13 @@
-@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @services @mtmoodle-15 
-Feature: Check access provider for logged users
-In order to check access provider
-As an admin
-I must access the services if service provider is enabled
+@3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @services @mtmoodle-15
+Feature: Integration Services availability - Logged users
+  In order to check access provider
+  As an admin
+  I must access the services if service provider is enabled
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
-      | access_provider_enabled | 1 | filter_wiris |
+      | config                  | value | plugin       |
+      | access_provider_enabled | 1     | filter_wiris |
     And the "wiris" filter is "on"
     And I log in as "admin"
 

@@ -1,24 +1,24 @@
-@3.x @4.x @wiris_mathtype @filter @filter_wiris @filter_settings @window_settings @mtmoodle-24
-Feature: Check full-screen modal
-In order to check if the editor's full-screen modal is displayed
-As an admin
-I need to open an editor
+@wiris_mathtype @filter @filter_wiris @filter_settings @window_settings @mtmoodle-24
+Feature: Filter Settings - Window Settings - Full Screen mode
+  In order to check if the editor's full-screen modal is displayed
+  As an admin
+  I need to open an editor
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
+      | config  | value        | plugin      |
       | toolbar | math = wiris | editor_atto |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | admin  | C1     | editingteacher |
+      | user  | course | role           |
+      | admin | C1     | editingteacher |
     And the "wiris" filter is "on"
     And I log in as "admin"
 
   @javascript @4.x @4.x_filter
-  Scenario: MTMOODLE-24 - Click on editor's full-screen button
+  Scenario: MTMOODLE-24 - Validate modal window is maximized when full screen mode is selected
     # set render type to "client"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "client"
@@ -42,7 +42,7 @@ I need to open an editor
     Then full screen modal window is opened
 
   @javascript @3.x @3.x_filter @4.0 @4.0_filter
-  Scenario: MTMOODLE-24 - Click on editor's full-screen button
+  Scenario: MTMOODLE-24 - Validate modal window is maximized when full screen mode is selected
     # set render type to "client"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
     And the MathType filter render type is set to "client"

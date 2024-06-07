@@ -1,20 +1,20 @@
 @wiris_mathtype @filter @filter_wiris @filter_settings @image_settings @mtmoodle-13
-Feature: Render in PNG format
-In order to check the PNG rendering
-As an admin
-I need to change the configuration
+Feature: Filter Settings - Image Settings - Render in PNG
+  In order to check the PNG rendering
+  As an admin
+  I need to change the configuration
 
   Background:
     Given the following config values are set as admin:
-      | config | value | plugin |
-      | toolbar | math = wiris | editor_atto |
-      | imageformat | png | filter_wiris |
+      | config      | value        | plugin       |
+      | toolbar     | math = wiris | editor_atto  |
+      | imageformat | png          | filter_wiris |
     And the following "courses" exist:
       | fullname | shortname | format |
       | Course 1 | C1        | topics |
     And the following "course enrolments" exist:
-      | user     | course | role           |
-      | admin  | C1     | editingteacher |
+      | user  | course | role           |
+      | admin | C1     | editingteacher |
     And the "wiris" filter is "on"
     And the MathType filter render type is set to "php"
     And I log in as "admin"
@@ -32,7 +32,7 @@ I need to change the configuration
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
       | Name | Test MathType for Atto and server side rendering on Moodle |
-    # insert Wirisformula 
+    # insert Wirisformula
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
     And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>(</mo><mfrac><mi>p</mi><mn>2</mn></mfrac><mo>)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mrow><mi>p</mi><mo>-</mo><mn>2</mn></mrow></msup><mo>-</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><mi>x</mi></mrow></mfrac><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>'
@@ -62,7 +62,7 @@ I need to change the configuration
     And I add a "Page" to section "0" using the activity chooser
     And I set the following fields to these values:
       | Name | Test MathType for Atto and server side rendering on Moodle |
-    # insert Wirisformula 
+    # insert Wirisformula
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
     And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>(</mo><mfrac><mi>p</mi><mn>2</mn></mfrac><mo>)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mrow><mi>p</mi><mo>-</mo><mn>2</mn></mrow></msup><mo>-</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><mi>x</mi></mrow></mfrac><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>'
@@ -88,7 +88,7 @@ I need to change the configuration
     And I add a "Page" to section "0"
     And I set the following fields to these values:
       | Name | Test MathType for Atto and server side rendering on Moodle |
-    # insert Wirisformula 
+    # insert Wirisformula
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
     And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>(</mo><mfrac><mi>p</mi><mn>2</mn></mfrac><mo>)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mrow><mi>p</mi><mo>-</mo><mn>2</mn></mrow></msup><mo>-</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><mi>x</mi></mrow></mfrac><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>'
@@ -118,7 +118,7 @@ I need to change the configuration
     And I add a "Page" to section "0"
     And I set the following fields to these values:
       | Name | Test MathType for Atto and server side rendering on Moodle |
-    # insert Wirisformula 
+    # insert Wirisformula
     And I press "MathType" in "Page content" field in Atto editor
     And I wait until MathType editor is displayed
     And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>(</mo><mfrac><mi>p</mi><mn>2</mn></mfrac><mo>)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mrow><mi>p</mi><mo>-</mo><mn>2</mn></mrow></msup><mo>-</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><mi>x</mi></mrow></mfrac><mfrac><mn>1</mn><mrow><mn>1</mn><mo>-</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math>'

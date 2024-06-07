@@ -1,11 +1,11 @@
 @3.x @3.x_filter @4.0 @4.0_filter @4.x @4.x_filter @wiris_mathtype @filter @filter_wiris @filter_settings @mtmoodle-29
 Feature: Check filters settings save correctly
-In order to check if MathType settings are being saved correctly
-As an admin
-I need to access the filters page in site administration
+  In order to check if MathType settings are being saved correctly
+  As an admin
+  I need to access the filters page in site administration
 
   @javascript
-  Scenario: MTMOODLE-29 - Check settings do not change before saving
+  Scenario: MTMOODLE-29 - Validate settings are saved correctly
     Given the "wiris" filter is "on"
     And I log in as "admin"
     And I navigate to "Plugins > MathType by WIRIS" in site administration
