@@ -41,3 +41,23 @@ Feature: Render in moodle forums
     And I wait "1" seconds
     # check that Wirisformula exists in forum
     Then a Wirisformula containing "1 plus 1" should exist
+
+#TODO:
+
+## insert Wirisformula in forum discussion
+#And I press "Add discussion topic"
+#And I set the following fields to these values:
+#  | Subject | Test MathType for wiris formula render in forum discussions |
+#And I press "MathType" in "Message" field in Atto editor
+#And I wait until MathType editor is displayed
+#And I set MathType formula to '<math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn><mo>+</mo><mn>2</mn></math>'
+#And I wait "1" seconds
+#And I press accept button in MathType Editor
+#And I press "Post to forum"
+#And I wait "1" seconds
+#Then a Wirisformula containing "2 plus 2" should exist
+## Check renders for Student role
+#And I follow "Switch role to..." in the user menu
+#And I press "Student"
+#And I wait "1" seconds
+#Then a Wirisformula containing "1 plus 1" should exist
